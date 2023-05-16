@@ -1,13 +1,13 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import { Helmet } from "react-helmet";
 import og from "./og.png";
+import { HelmetProvider, Helmet } from "react-helmet-async";
 
 function App() {
   return (
-    <>
-      <Helmet>
+    <HelmetProvider>
+      <Helmet prioritizeSeoTags async={false}>
         <title>Title</title>
         <meta name="description" content="Description" />
         <meta property="og:title" content="OG title" />
@@ -31,7 +31,7 @@ function App() {
           </a>
         </header>
       </div>
-    </>
+    </HelmetProvider>
   );
 }
 
